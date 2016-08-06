@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {
     View,
     ScrollView,
-    Image
+    Image,
+    TouchableOpacity,
 } from 'react-native';
 
 
@@ -14,7 +15,9 @@ export default class PhotoView extends Component {
                 centerContent={true}
                 maximumZoomScale={this.props.maximumZoomScale}
                 minimumZoomScale={this.props.minimumZoomScale}>
-                <Image {...this.props}/>
+                <TouchableOpacity onPress={this.props.onTap?this.props.onTap:function(){}}>
+                    <Image {...this.props}/>
+                </TouchableOpacity>
             </ScrollView>
         );
     }
